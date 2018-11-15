@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.myapplication7.JoinActivity">
+
+
+    <TextView
+        android:id="@+id/join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:textSize="22sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/join_name"
+        android:layout_alignStart="@+id/join_name"
+        android:layout_marginLeft="64dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="17dp" />
+
+    <TextView
+        android:id="@+id/join_textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_alignBaseline="@+id/join_name"
+        android:layout_alignBottom="@+id/join_name"
+        android:layout_alignLeft="@+id/join_textView2"
+        android:layout_alignStart="@+id/join_textView2" />
+    <TextView
+        android:id="@+id/join_textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:layout_marginTop="52dp"
+        android:layout_below="@+id/join_name"
+        android:layout_alignLeft="@+id/join_textView3"
+        android:layout_alignStart="@+id/join_textView3" />
+    <TextView
+        android:id="@+id/join_textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/join_email"
+        android:layout_toLeftOf="@+id/join_password"
+        android:layout_toStartOf="@+id/join_password" />
+    <EditText
+        android:id="@+id/join_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="61dp"
+        android:layout_below="@+id/join"
+        android:layout_centerHorizontal="true" />
+    <EditText
+        android:id="@+id/join_password"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_alignTop="@+id/join_textView3"
+        android:layout_alignLeft="@+id/join_email"
+        android:layout_alignStart="@+id/join_email" />
+    <EditText
+        android:id="@+id/join_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:layout_alignBaseline="@+id/join_textView2"
+        android:layout_alignBottom="@+id/join_textView2"
+        android:layout_alignLeft="@+id/join_name"
+        android:layout_alignStart="@+id/join_name" />
+</RelativeLayout>
