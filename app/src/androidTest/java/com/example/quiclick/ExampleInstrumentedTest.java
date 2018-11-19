@@ -1,4 +1,4 @@
-package com.example.myapplication7;
+package com.example.quiclick;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.myapplication7", appContext.getPackageName());
+        assertEquals("com.example.quiclick", appContext.getPackageName());
     }
 }

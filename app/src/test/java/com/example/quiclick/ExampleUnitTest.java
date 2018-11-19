@@ -1,4 +1,4 @@
-package com.example.myapplication7;
+package com.example.quiclick;
 
 import org.junit.Test;
 
