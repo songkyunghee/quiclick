@@ -22,7 +22,7 @@ public class JoinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_join);
         canselComponent();
 
-        sign_in_button = (Button)findViewById(R.id.sign_in_button);
+        sign_in_button = (Button)findViewById(R.id.ok_button);
         sign_in_button.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -38,9 +38,9 @@ public class JoinActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONEXception");
                 }
-                new DeleteData(JoinActivity.this).execute(postDataParam);
                 new InsertData(JoinActivity.this).execute(postDataParam);
-
+                Intent intent=new Intent(JoinActivity.this,LoginActivity.class);
+                startActivity(intent);
             }
         });
 
