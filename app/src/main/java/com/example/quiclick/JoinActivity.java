@@ -15,15 +15,15 @@ public class JoinActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";
     final static String defaultUrl = "http://54.180.102.223";
  Button cancel_button;
-    Button sign_in_button;
+    Button sign_ok_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
         canselComponent();
 
-        sign_in_button = (Button)findViewById(R.id.ok_button);
-        sign_in_button.setOnClickListener(new View.OnClickListener(){
+        sign_ok_button = (Button)findViewById(R.id.ok_button);
+        sign_ok_button.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
