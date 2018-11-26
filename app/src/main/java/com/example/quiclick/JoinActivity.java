@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 public class JoinActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";
-    final static String defaultUrl = "http://54.180.102.223";
+    final static String defaultUrl = "http://13.209.206.111:3000";
  Button cancel_button;
     Button sign_ok_button;
     @Override
@@ -34,7 +34,7 @@ public class JoinActivity extends AppCompatActivity {
                 try {
                     postDataParam.put("name", edit_name.getText().toString());
                     postDataParam.put("password", edit_password.getText().toString());
-                    postDataParam.put("id", edit_id.getText().toString());
+                    postDataParam.put("username", edit_id.getText().toString());
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONEXception");
                 }

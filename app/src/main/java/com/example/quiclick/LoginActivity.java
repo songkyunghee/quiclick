@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";
-    final static String defaultUrl = "http://54.180.102.223";
+    final static String defaultUrl = "http://13.209.206.111:3000";
     Button sign_up_button;
     Button sign_in_button;
 
@@ -33,9 +33,9 @@ public class LoginActivity extends AppCompatActivity {
                 EditText password_form = (EditText) findViewById(R.id.password_form);
                 JSONObject postDataParam = new JSONObject();
                 try {
-                    postDataParam.put("id", ID_form.getText().toString());
+                    postDataParam.put("username", ID_form.getText().toString());
                     postDataParam.put("password", password_form.getText().toString());
-                    Toast.makeText(getApplicationContext(), "Login Success!",Toast.LENGTH_SHORT ).show();
+                   // Toast.makeText(getApplicationContext(), "Login Success!",Toast.LENGTH_SHORT ).show();
 
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONEXception");

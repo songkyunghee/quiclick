@@ -17,7 +17,7 @@ public class GetData extends GetRequest{
     protected void onPreExecute() {
 
         try {
-            url = new URL( "http://54.180.102.223/public/login");
+            url = new URL( "http://13.209.206.111:3000/users/authenticate");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
