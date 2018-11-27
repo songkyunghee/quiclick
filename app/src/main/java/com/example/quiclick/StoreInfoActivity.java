@@ -23,7 +23,7 @@ public class StoreInfoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_reviewmenu:
-                startActivity(new Intent(getApplicationContext(), ReviewPlusActivity.class));
+                startActivity(new Intent(getApplicationContext(), ReviewActivity.class));
                 return true;
             default:
                 return false;

@@ -1,6 +1,8 @@
 package com.example.quiclick;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,8 @@ public class LoginActivity extends AppCompatActivity {
     final static String defaultUrl = "http://13.209.206.111:3000";
     Button sign_up_button;
     Button sign_in_button;
+
+
 
 
     @Override

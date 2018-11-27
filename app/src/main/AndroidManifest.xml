@@ -14,8 +14,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".LoginActivity" />
         <activity
-            android:name=".JoinActivity"
-            android:parentActivityName=".LoginActivity" />
+            android:name=".JoinActivity" />
         <activity android:name=".StoreActivity" />
         <activity
             android:name=".SplashActivity"
