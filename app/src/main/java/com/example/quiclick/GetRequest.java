@@ -12,6 +12,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -26,104 +27,17 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class GetRequest extends AsyncTask<JSONObject, Void, String> {
-   static String success=null;
-
+abstract public class GetRequest extends AsyncTask<JSONObject, Void, String> {
+    final static String TAG = "AndroidNodeJS";
     Activity activity;
     URL url;
-   // LoginActivity login;
-
     public GetRequest(Activity activity) {
         this.activity = activity;
     }
-    @Override
-    protected String doInBackground(JSONObject... postDataParams) {
-        try {
-            //서버연결
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setReadTimeout(10000 /* milliseconds */);
-            conn.setConnectTimeout(10000 /* milliseconds */);
-            conn.setRequestMethod("POST");
-            conn.setDoInput(true);
-            conn.setDoOutput(true);
-//안드로이드->서버 파라메터값 전달
-            OutputStream os = conn.getOutputStream();
-            BufferedWriter writer = new BufferedWriter(
-                    new OutputStreamWriter(os, "UTF-8"));
-            String str = getPostDataString(postDataParams[0]);
-            Log.e("params", "Post String = " + str);
-            writer.write(str);
-
-            writer.flush();
-            writer.close();
-            os.close();
-
-            int responseCode = conn.getResponseCode();
-
-            if (responseCode == HttpsURLConnection.HTTP_OK) {
-//서버-> 안드로이드 파라메터값 전달
-                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                StringBuffer sb = new StringBuffer("");
-                String line = "";
-                String data ="";
-
-                while ((line = in.readLine()) != null) {
-
-                    sb.append(line);
-                    break;
-                }
-                //data=sb.toString().trim();
-            JSONObject k=null;
-                k=new JSONObject(sb.toString());
-                success=k.get("success").toString();
-
-                in.close();
-
-                return sb.toString();
-
-            } else {
-                return new String("Server Error : " + responseCode);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-    @Override
-    protected void onPostExecute(String result) {
-        Toast.makeText(activity, result,
-                Toast.LENGTH_LONG).show();
-//      if(result.equals("success")){
-//      login= new LoginActivity();
-//          login.loginComponent();
-//}
-        }
 
 
-    private String getPostDataString(JSONObject params) throws Exception {
 
-        StringBuilder result = new StringBuilder();
-        boolean first = true;
 
-        Iterator<String> itr = params.keys();
-
-        while (itr.hasNext()) {
-
-            String key = itr.next();
-            Object value = params.get(key);
-
-            if (first)
-                first = false;
-            else
-                result.append("&");
-
-            result.append(URLEncoder.encode(key, "UTF-8"));
-            result.append("=");
-            result.append(URLEncoder.encode(value.toString(), "UTF-8"));
-
-        }
-        return result.toString();
-    }
 
 }
 

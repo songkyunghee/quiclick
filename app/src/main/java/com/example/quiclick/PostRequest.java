@@ -26,7 +26,7 @@ import javax.net.ssl.HttpsURLConnection;
  */
 
 public class PostRequest extends AsyncTask<JSONObject, Void, String> {
-
+    static String success=null;
     Activity activity;
     URL url;
 
@@ -67,7 +67,9 @@ public class PostRequest extends AsyncTask<JSONObject, Void, String> {
                     sb.append(line);
                     break;
                 }
-
+                JSONObject k=null;
+                k=new JSONObject(sb.toString());
+                success=k.get("success").toString();
                 in.close();
                 return sb.toString();
 

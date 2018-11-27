@@ -15,7 +15,8 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.example.quiclick.GetRequest.success;
+
+import static com.example.quiclick.PostRequest.success;
 
 public class LoginActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";

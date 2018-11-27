@@ -14,7 +14,7 @@ import java.net.URL;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class GetData extends GetRequest{
+public class GetData extends PostRequest{
 
     public GetData(Activity activity) {
         super(activity);
