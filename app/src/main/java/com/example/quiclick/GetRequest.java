@@ -1,6 +1,9 @@
 package com.example.quiclick;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
@@ -24,9 +27,11 @@ import javax.net.ssl.HttpsURLConnection;
  */
 
 public class GetRequest extends AsyncTask<JSONObject, Void, String> {
+   static String success=null;
 
     Activity activity;
     URL url;
+   // LoginActivity login;
 
     public GetRequest(Activity activity) {
         this.activity = activity;
@@ -34,13 +39,14 @@ public class GetRequest extends AsyncTask<JSONObject, Void, String> {
     @Override
     protected String doInBackground(JSONObject... postDataParams) {
         try {
+            //서버연결
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000 /* milliseconds */);
             conn.setConnectTimeout(10000 /* milliseconds */);
             conn.setRequestMethod("POST");
             conn.setDoInput(true);
             conn.setDoOutput(true);
-
+//안드로이드->서버 파라메터값 전달
             OutputStream os = conn.getOutputStream();
             BufferedWriter writer = new BufferedWriter(
                     new OutputStreamWriter(os, "UTF-8"));
@@ -55,18 +61,24 @@ public class GetRequest extends AsyncTask<JSONObject, Void, String> {
             int responseCode = conn.getResponseCode();
 
             if (responseCode == HttpsURLConnection.HTTP_OK) {
-
+//서버-> 안드로이드 파라메터값 전달
                 BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
                 StringBuffer sb = new StringBuffer("");
                 String line = "";
+                String data ="";
 
                 while ((line = in.readLine()) != null) {
 
                     sb.append(line);
                     break;
                 }
+                //data=sb.toString().trim();
+            JSONObject k=null;
+                k=new JSONObject(sb.toString());
+                success=k.get("success").toString();
 
                 in.close();
+
                 return sb.toString();
 
             } else {
@@ -81,7 +93,12 @@ public class GetRequest extends AsyncTask<JSONObject, Void, String> {
     protected void onPostExecute(String result) {
         Toast.makeText(activity, result,
                 Toast.LENGTH_LONG).show();
-    }
+//      if(result.equals("success")){
+//      login= new LoginActivity();
+//          login.loginComponent();
+//}
+        }
+
 
     private String getPostDataString(JSONObject params) throws Exception {
 
@@ -107,6 +124,7 @@ public class GetRequest extends AsyncTask<JSONObject, Void, String> {
         }
         return result.toString();
     }
+
 }
 
 

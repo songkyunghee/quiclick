@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorpink1"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context="com.example.quiclick.LoginActivity"
@@ -16,7 +16,7 @@
         android:gravity="center_vertical|center_horizontal"
         android:text="Quiclick"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#fff"
+        android:textColor="@color/colorpink7"
         android:textSize="40dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp" />
@@ -36,7 +36,6 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="ID"
-        android:textColor="@android:color/background_light"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="211dp" />
 
@@ -60,7 +59,6 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="Password"
-        android:textColor="@android:color/background_light"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="211dp" />
 
@@ -86,7 +84,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="16dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorpink5"
         android:text="SIGN IN"
         android:textColor="#fff"
         android:textStyle="bold" />
@@ -103,14 +101,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don’t have an account ?"
-            android:textColor="#80ffffff"
             android:textSize="14dp" />
 
         <Button
             android:id="@+id/sign_up_button"
             android:layout_width="77dp"
             android:layout_height="33dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorpink5"
             android:paddingLeft="5dp"
             android:text="Sign up."
             android:textColor="#ffffff"
