@@ -17,6 +17,7 @@
         android:text="Quiclick"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorpink7"
+        android:typeface= "serif"
         android:textSize="40dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp" />
@@ -100,7 +101,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don’t have an account ?"
+            android:text="Don't have an account ?"
             android:textSize="14dp" />
 
         <Button
@@ -109,7 +110,7 @@
             android:layout_height="33dp"
             android:background="@color/colorpink5"
             android:paddingLeft="5dp"
-            android:text="Sign up."
+            android:text="Sign up"
             android:textColor="#ffffff"
             android:textSize="14dp" />
     </LinearLayout>

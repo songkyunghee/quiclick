@@ -28,7 +28,6 @@
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="195dp"></ListView>
+          ></ListView>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

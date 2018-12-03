@@ -1,10 +1,12 @@
 package com.example.quiclick;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,7 +36,7 @@ public class StoreData extends GetRequest{
     protected void onPreExecute() {
 
         try {
-            url = new URL("http://13.209.244.98:3000/stores/storelist");
+            url = new URL( "http://13.209.244.98:3000/store/storelist");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -43,14 +45,22 @@ public class StoreData extends GetRequest{
     protected void onPostExecute(String jsonString) {
         if (jsonString == null)
             return;
-        ArrayList<Store> arrayList = getArrayListFromJSONString(jsonString);
+        try {
+            JSONObject resultJSON = new JSONObject(jsonString);
 
-        ArrayAdapter adapter = new ArrayAdapter(activity,
-                android.R.layout.simple_list_item_1,
-                arrayList.toArray());
-        ListView txtList = activity.findViewById(R.id.listView);
-        txtList.setAdapter(adapter);
-        txtList.setDividerHeight(10);
+            ArrayList<Store> arrayList = getArrayListFromJSONString(jsonString);
+
+                ArrayAdapter adapter = new ArrayAdapter(activity,
+                        android.R.layout.simple_list_item_1,
+                        arrayList.toArray());
+                ListView txtList = activity.findViewById(R.id.listView);
+                txtList.setAdapter(adapter);
+               // txtList.setDividerHeight(10);
+            }
+
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -65,7 +75,7 @@ public class StoreData extends GetRequest{
 
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
 
-                Store store = new Store(jsonObject.getString("_id"),
+                Store store = new Store(
                         jsonObject.getString("name"),
                         jsonObject.getString("des")
                         );

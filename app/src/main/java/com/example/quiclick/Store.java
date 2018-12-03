@@ -5,18 +5,18 @@ package com.example.quiclick;
  */
 
 public class Store {
-    String id;
+
     String name;
     String des;
 
-    public Store(String id, String name, String des) {
-        this.id = id;
+    public Store( String name, String des) {
+
         this.name = name;
         this.des = des;
     }
 
     public String toString() {
-        return String.format("id = %s \n name = %s \n des = %s", id, name, des);
+        return String.format(" name = %s \n des = %s",  name, des);
     }
 }
 

@@ -23,7 +23,7 @@ public class StoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 
-
+       // new StoreData(StoreActivity.this).execute();
         ListView txtList = (ListView) findViewById(R.id.listView);
        // txtList.setAdapter();
         txtList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -32,9 +32,9 @@ public class StoreActivity extends AppCompatActivity {
                 Adapter adapter = adapterView.getAdapter();
                 JSONObject postDataParam = new JSONObject();
                 try {
-                    postDataParam.put("id", ((Store) adapter.getItem(i)).id);
-                   // postDataParam.put("name", ((stores) adapter.getItem(i)).name);
-                    //postDataParam.put("des", ((stores) adapter.getItem(i)).des);
+                   // postDataParam.put("id", ((Store) adapter.getItem(i)).id);
+                    postDataParam.put("name", ((Store) adapter.getItem(i)).name);
+                    postDataParam.put("des", ((Store) adapter.getItem(i)).des);
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONEXception");
                 }

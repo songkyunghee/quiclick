@@ -37,14 +37,14 @@ public class JoinActivity extends AppCompatActivity {
                 JSONObject postDataParam = new JSONObject();
                 try {
                     postDataParam.put("name", edit_name.getText().toString());
-                    postDataParam.put("password", edit_password.getText().toString());
                     postDataParam.put("username", edit_id.getText().toString());
+                    postDataParam.put("password", edit_password.getText().toString());
+
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONEXception");
                 }
                 new InsertData(JoinActivity.this).execute(postDataParam);
-                Intent intent=new Intent(JoinActivity.this,LoginActivity.class);
-                startActivity(intent);
+
             }
         });
 

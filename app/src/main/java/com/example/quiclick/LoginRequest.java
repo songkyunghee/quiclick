@@ -39,8 +39,13 @@ public class LoginRequest extends PostRequest{
 
             String successVaule=resultJSON.get("success").toString();
             if(successVaule.equals("true")) {
+                Toast.makeText(activity, "Login Success!",Toast.LENGTH_SHORT ).show();
                     Intent intent= new Intent(activity, StoreActivity.class);
                     activity.startActivity(intent);
+
+            }
+            else{
+                Toast.makeText(activity, "Login Fail",Toast.LENGTH_SHORT ).show();
             }
         } catch (JSONException e) {
             e.printStackTrace();
