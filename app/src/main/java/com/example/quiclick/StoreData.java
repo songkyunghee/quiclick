@@ -25,9 +25,7 @@ import javax.net.ssl.HttpsURLConnection;
  */
 
 public class StoreData extends GetRequest{
-    final static String TAG = "AndroidNodeJS";
-    Activity activity;
-    URL url;
+
     public StoreData(Activity activity) {
         super(activity);
     }
@@ -36,67 +34,16 @@ public class StoreData extends GetRequest{
     protected void onPreExecute() {
 
         try {
-            url = new URL("http://13.209.206.111:3000/stores/storelist");  // http://serverURLStr/get-data
+            url = new URL("http://13.209.244.98:3000/stores/storelist");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
     }
-
-    @Override
-    protected String doInBackground(JSONObject... strings) {
-        StringBuffer output = new StringBuffer();
-
-        try {
-            if (url == null) {
-                Log.e(TAG, "Error: URL is null ");
-                return null;
-            }
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-            if (conn == null) {
-                Log.e(TAG, "HttpsURLConnection Error");
-                return null;
-            }
-            conn.setConnectTimeout(10000);
-            conn.setRequestMethod("GET");
-            conn.setDoInput(true);
-            conn.setDoOutput(false);
-
-            int resCode = conn.getResponseCode();
-
-            if (resCode != HttpsURLConnection.HTTP_OK) {
-                Log.e(TAG, "HttpsURLConnection ResponseCode: " + resCode);
-                conn.disconnect();
-                return null;
-            }
-            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String line = null;
-            while (true) {
-                line = reader.readLine();
-                if (line == null) {
-                    break;
-                }
-                output.append(line + "\n");
-            }
-
-            reader.close();
-            conn.disconnect();
-
-        } catch (IOException ex) {
-            Log.e(TAG, "Exception in processing response.", ex);
-            ex.printStackTrace();
-        }
-
-        return output.toString();
-    }
-
-
-
     @Override
     protected void onPostExecute(String jsonString) {
         if (jsonString == null)
             return;
-        ArrayList<stores> arrayList = getArrayListFromJSONString(jsonString);
+        ArrayList<Store> arrayList = getArrayListFromJSONString(jsonString);
 
         ArrayAdapter adapter = new ArrayAdapter(activity,
                 android.R.layout.simple_list_item_1,
@@ -106,8 +53,10 @@ public class StoreData extends GetRequest{
         txtList.setDividerHeight(10);
     }
 
-    protected ArrayList<stores> getArrayListFromJSONString(String jsonString) {
-        ArrayList<stores> output = new ArrayList();
+
+
+    protected ArrayList<Store> getArrayListFromJSONString(String jsonString) {
+        ArrayList<Store> output = new ArrayList();
         try {
 
             JSONArray jsonArray = new JSONArray(jsonString);
@@ -116,7 +65,7 @@ public class StoreData extends GetRequest{
 
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
 
-                stores store = new stores(jsonObject.getString("_id"),
+                Store store = new Store(jsonObject.getString("_id"),
                         jsonObject.getString("name"),
                         jsonObject.getString("des")
                         );

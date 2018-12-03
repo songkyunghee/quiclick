@@ -18,7 +18,7 @@ public class InsertData extends PostRequest{
     protected void onPreExecute() {
 
         try {
-            url = new URL( "http://13.209.206.111:3000/users/register");
+            url = new URL( "http://13.209.244.98:3000/users/register");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

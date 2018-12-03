@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 public class JoinActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";
-    final static String defaultUrl = "http://13.209.206.111:3000";
+    final static String defaultUrl = "http://13.209.244.98:3000";
  Button cancel_button;
     Button sign_ok_button;
     @Override

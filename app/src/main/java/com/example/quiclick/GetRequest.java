@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -19,6 +21,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -34,6 +37,56 @@ abstract public class GetRequest extends AsyncTask<JSONObject, Void, String> {
     public GetRequest(Activity activity) {
         this.activity = activity;
     }
+
+
+    @Override
+    protected String doInBackground(JSONObject... strings) {
+        StringBuffer output = new StringBuffer();
+
+        try {
+            if (url == null) {
+                Log.e(TAG, "Error: URL is null ");
+                return null;
+            }
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+            if (conn == null) {
+                Log.e(TAG, "HttpsURLConnection Error");
+                return null;
+            }
+            conn.setConnectTimeout(10000);
+            conn.setRequestMethod("GET");
+            conn.setDoInput(true);
+            conn.setDoOutput(false);
+
+            int resCode = conn.getResponseCode();
+
+            if (resCode != HttpsURLConnection.HTTP_OK) {
+                Log.e(TAG, "HttpsURLConnection ResponseCode: " + resCode);
+                conn.disconnect();
+                return null;
+            }
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line = null;
+            while (true) {
+                line = reader.readLine();
+                if (line == null) {
+                    break;
+                }
+                output.append(line + "\n");
+            }
+
+            reader.close();
+            conn.disconnect();
+
+        } catch (IOException ex) {
+            Log.e(TAG, "Exception in processing response.", ex);
+            ex.printStackTrace();
+        }
+
+        return output.toString();
+    }
+
 
 
 

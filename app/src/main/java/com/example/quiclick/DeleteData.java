@@ -17,7 +17,7 @@ public class DeleteData extends PostRequest{
     protected void onPreExecute() {
 
         try {
-            url = new URL( "http://54.180.102.223/adduser");
+            url = new URL( "http://13.209.244.98/adduser");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

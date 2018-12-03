@@ -22,23 +22,25 @@ public class StoreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
-        new GetData(StoreActivity.this).execute();
+
 
         ListView txtList = (ListView) findViewById(R.id.listView);
-        txtList.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
-        @Override
-        public void onItemClick (AdapterView < ? > adapterView, View view,int i, long l){
-        Adapter adapter = adapterView.getAdapter();
-        JSONObject postDataParam = new JSONObject();
-        try {
-            postDataParam.put("id", ((stores) adapter.getItem(i)).id);
-        } catch (JSONException e) {
-            Log.e(TAG, "JSONEXception");
-        }
-
-        new GetData(StoreActivity.this).execute();
+       // txtList.setAdapter();
+        txtList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Adapter adapter = adapterView.getAdapter();
+                JSONObject postDataParam = new JSONObject();
+                try {
+                    postDataParam.put("id", ((Store) adapter.getItem(i)).id);
+                   // postDataParam.put("name", ((stores) adapter.getItem(i)).name);
+                    //postDataParam.put("des", ((stores) adapter.getItem(i)).des);
+                } catch (JSONException e) {
+                    Log.e(TAG, "JSONEXception");
+                }
+                // new InsertData(StoreActivity.this).execute(postDataParam);
+                new StoreData(StoreActivity.this).execute();
+            }
+        });
     }
-    });
-}
 }

@@ -1,16 +1,12 @@
 package com.example.quiclick;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +16,7 @@ import static com.example.quiclick.PostRequest.success;
 
 public class LoginActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";
-    final static String defaultUrl = "http://13.209.206.111:3000";
+    final static String defaultUrl = "http://13.209.244.98:3000";
     Button sign_up_button;
     Button sign_in_button;
 
@@ -48,14 +44,14 @@ public class LoginActivity extends AppCompatActivity {
 
                    // Toast.makeText(getApplicationContext(), "Login Success!",Toast.LENGTH_SHORT ).show();
                     //success = postDataParam.getString("success");
-                    if(success=="true") {
-                        Intent intent= new Intent(LoginActivity.this, StoreActivity.class);
-                        startActivity(intent);
-                    }
+//                    if(success=="true") {
+//                        Intent intent= new Intent(LoginActivity.this, StoreActivity.class);
+//                        startActivity(intent);
+//                    }
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONEXception");
                 }
-                new GetData(LoginActivity.this).execute(postDataParam);
+                new LoginRequest(LoginActivity.this).execute(postDataParam);
 
 
 
