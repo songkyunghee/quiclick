@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/storename"
+        android:id="@+id/storename2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"

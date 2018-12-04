@@ -36,7 +36,7 @@ public class StoreData extends GetRequest{
     protected void onPreExecute() {
 
         try {
-            url = new URL( "http://13.209.244.98:3000/store/storelist");
+            url = new URL( "http://13.209.244.98:3000/stores/storelist");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -45,8 +45,8 @@ public class StoreData extends GetRequest{
     protected void onPostExecute(String jsonString) {
         if (jsonString == null)
             return;
-        try {
-            JSONObject resultJSON = new JSONObject(jsonString);
+
+
 
             ArrayList<Store> arrayList = getArrayListFromJSONString(jsonString);
 
@@ -56,11 +56,9 @@ public class StoreData extends GetRequest{
                 ListView txtList = activity.findViewById(R.id.listView);
                 txtList.setAdapter(adapter);
                // txtList.setDividerHeight(10);
-            }
 
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
+
+
     }
 
 
@@ -68,11 +66,11 @@ public class StoreData extends GetRequest{
     protected ArrayList<Store> getArrayListFromJSONString(String jsonString) {
         ArrayList<Store> output = new ArrayList();
         try {
-
-            JSONArray jsonArray = new JSONArray(jsonString);
+        JSONObject object= new JSONObject(jsonString);
+            JSONArray jsonArray = object.getJSONArray("store");
 
             for (int i = 0; i < jsonArray.length(); i++) {
-
+      //Log.v("제이슨 어레이", String.valueOf(i));
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
 
                 Store store = new Store(

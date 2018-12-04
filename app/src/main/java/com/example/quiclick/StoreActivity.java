@@ -22,7 +22,7 @@ public class StoreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
-
+        new StoreData(StoreActivity.this).execute();
        // new StoreData(StoreActivity.this).execute();
         ListView txtList = (ListView) findViewById(R.id.listView);
        // txtList.setAdapter();
