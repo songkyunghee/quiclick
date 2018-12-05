@@ -8,11 +8,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class StoreInfoActivity extends AppCompatActivity {
     Button review_button;
     Button reservation_button;
-
+   TextView storename;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +25,7 @@ public class StoreInfoActivity extends AppCompatActivity {
 
         review_button = (Button) findViewById(R.id.review_button);
         reservation_button = (Button) findViewById(R.id.reservation_button);
-
+         storename=(TextView)findViewById(R.id.storename);
 
         review_button.setOnClickListener(new View.OnClickListener(){
 
@@ -52,6 +56,13 @@ public class StoreInfoActivity extends AppCompatActivity {
 //    }
 
 
+    }
+
+    public void settext (String result) {
+
+            storename.setText(result);
+
+//
     }
 }
 //    public boolean onCreateOptionsMenu(Menu menu) { //액션바에 플러스 누르면 메뉴 추가 액티비티

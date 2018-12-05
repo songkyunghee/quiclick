@@ -27,7 +27,8 @@ import javax.net.ssl.HttpsURLConnection;
  */
 
 public class StoreData extends GetRequest{
-
+        private  MyAdapter myAdapter;
+       public  ArrayList<Store> output;
     public StoreData(Activity activity) {
         super(activity);
     }
@@ -49,36 +50,36 @@ public class StoreData extends GetRequest{
 
 
             ArrayList<Store> arrayList = getArrayListFromJSONString(jsonString);
-
-                ArrayAdapter adapter = new ArrayAdapter(activity,
-                        android.R.layout.simple_list_item_1,
-                        arrayList.toArray());
+        myAdapter= new MyAdapter(activity,R.layout.item,output);
+//                ArrayAdapter adapter = new ArrayAdapter(activity,
+//                        android.R.layout.simple_list_item_1,
+//                        arrayList.toArray());
                 ListView txtList = activity.findViewById(R.id.listView);
-                txtList.setAdapter(adapter);
+                txtList.setAdapter(myAdapter);
                // txtList.setDividerHeight(10);
-
-
 
     }
 
 
-
     protected ArrayList<Store> getArrayListFromJSONString(String jsonString) {
-        ArrayList<Store> output = new ArrayList();
+         output = new ArrayList<Store>();
         try {
         JSONObject object= new JSONObject(jsonString);
             JSONArray jsonArray = object.getJSONArray("store");
 
             for (int i = 0; i < jsonArray.length(); i++) {
-      //Log.v("제이슨 어레이", String.valueOf(i));
+
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
 
                 Store store = new Store(
+
                         jsonObject.getString("name"),
                         jsonObject.getString("des")
+
                         );
 
                 output.add(store);
+
             }
         } catch (JSONException e) {
             Log.e(TAG, "Exception in processing JSONString.", e);

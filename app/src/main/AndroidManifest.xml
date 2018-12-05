@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ReviewActivity" />
+        <activity android:name=".StoreInfoActivity" />
     </application>
 
 </manifest>
