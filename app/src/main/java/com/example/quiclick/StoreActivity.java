@@ -1,5 +1,6 @@
 package com.example.quiclick;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ public class StoreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
+
         new StoreData(StoreActivity.this).execute();
        // final TextView storename=(TextView)findViewById(R.id.storename);
        // new StoreData(StoreActivity.this).execute();
@@ -33,20 +35,23 @@ public class StoreActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Adapter adapter = adapterView.getAdapter();
                 JSONObject postDataParam = new JSONObject();
-               // String name = ((Store)adapter.getItem(i)).name;
-             //   storeInfoActivity.settext(name);
-                try {
-                   // postDataParam.put("id", ((Store) adapter.getItem(i)).id);
-                    postDataParam.put("name", ((Store) adapter.getItem(i)).name);
-                    postDataParam.put("des", ((Store) adapter.getItem(i)).des);
-//                    String namevalue=postDataParam.get("name").toString();
-//                    storename.setText(namevalue);
+                String name=((Store) adapter.getItem(i)).name;
+                Intent intent=new Intent(StoreActivity.this,StoreInfoActivity.class);
+                intent.putExtra("name",name);
+                //intent.putExtra("des",des);
+                startActivity(intent);
 
-                } catch (JSONException e) {
-                    Log.e(TAG, "JSONEXception");
-                }
-                // new InsertData(StoreActivity.this).execute(postDataParam);
-                new StoreInfoData(StoreActivity.this).execute(postDataParam);
+//                try {
+//                   // postDataParam.put("id", ((Store) adapter.getItem(i)).id);
+//                    postDataParam.put("name", ((Store) adapter.getItem(i)).name);
+//                    postDataParam.put("des", ((Store) adapter.getItem(i)).des);
+//
+//
+//
+//                } catch (JSONException e) {
+//                    Log.e(TAG, "JSONEXception");
+//                }
+//
 
 
             }

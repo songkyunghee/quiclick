@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public class StoreInfoActivity extends AppCompatActivity {
     Button review_button;
     Button reservation_button;
-   TextView storename;
+  TextView storename;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,8 @@ public class StoreInfoActivity extends AppCompatActivity {
         review_button = (Button) findViewById(R.id.review_button);
         reservation_button = (Button) findViewById(R.id.reservation_button);
          storename=(TextView)findViewById(R.id.storename);
-
+        String name = getIntent().getStringExtra("name");
+        storename.setText(name);
         review_button.setOnClickListener(new View.OnClickListener(){
 
             @Override

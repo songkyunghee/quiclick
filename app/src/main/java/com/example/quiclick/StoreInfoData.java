@@ -41,10 +41,7 @@ public class StoreInfoData extends GetRequest{
     protected void onPostExecute(String jsonString) {
         if (jsonString == null)
             return;
-       // TextView storename=(TextView)activity.findViewById(R.id.storename);
-        Intent intent=new Intent(activity,StoreInfoActivity.class);
-        activity.startActivity(intent);
-        //storeInfoActivity.settext(postDataParam);
+
 
 
 
