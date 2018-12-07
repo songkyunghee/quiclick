@@ -8,12 +8,16 @@ public class Store {
 
     String name;
     String des;
+    String call;
+    String add;
 
 
-    public Store( String name, String des) {
+    public Store( String name, String des, String call, String add) {
 
         this.name = name;
         this.des = des;
+        this.call=call;
+        this.add=add;
 
     }
 
@@ -25,6 +29,9 @@ public class Store {
     public void setName(String name) {this.name=name;}
     public String getDes() {return des;}
     public void setDes(String des) {this.des=des;}
-
+    public String getCall() {return call;}
+    public void setCall(String call) {this.call=call;}
+    public String getAdd() {return add;}
+    public void setAdd(String add) {this.add=add;}
 }
 

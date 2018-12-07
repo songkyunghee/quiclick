@@ -74,7 +74,9 @@ public class StoreData extends GetRequest{
                 Store store = new Store(
 
                         jsonObject.getString("name"),
-                        jsonObject.getString("des")
+                        jsonObject.getString("des"),
+                        jsonObject.getString("call"),
+                        jsonObject.getString("add")
 
                         );
 

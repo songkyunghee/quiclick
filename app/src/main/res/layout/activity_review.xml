@@ -28,7 +28,6 @@
             android:id="@+id/edit_review"
             android:layout_width="350dp"
             android:layout_height="150dp"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_margin="15dp"
             android:background="@drawable/border"
@@ -37,7 +36,7 @@
             android:inputType="textMultiLine|textNoSuggestions" />
 
     <Button
-        android:id="@+id/sign_in_button"
+        android:id="@+id/add_review_button"
         android:layout_width="150dp"
         android:layout_height="30dp"
         android:layout_marginLeft="100dp"
