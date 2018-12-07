@@ -1,17 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorpink1"
+    android:orientation="vertical"
+    tools:context="com.example.quiclick.ReviewActivity"
+    >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_message"
         android:layout_width="77dp"
-        android:layout_height="33dp"
-        android:text="대기자 수" />
+        android:layout_height="77dp"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/text_wait"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingBottom="7dp"
+        android:paddingTop="7dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="20dp"
+        android:text="대기자 수"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/text_waitnum"
         android:layout_width="77dp"
         android:layout_height="33dp"
-        android:background="@color/colorgray" />
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/colorgray"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/button_reservation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorpink5"
+        android:text="Reservation"
+        android:textColor="#fff"
+        android:textStyle="bold" />
 </LinearLayout>

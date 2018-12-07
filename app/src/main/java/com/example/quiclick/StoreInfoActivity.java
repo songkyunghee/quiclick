@@ -16,7 +16,10 @@ import org.json.JSONObject;
 public class StoreInfoActivity extends AppCompatActivity {
     Button review_button;
     Button reservation_button;
-  TextView storename;
+    TextView text_name;
+    TextView text_des;
+    TextView text_call;
+    TextView text_add;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,9 +28,18 @@ public class StoreInfoActivity extends AppCompatActivity {
 
         review_button = (Button) findViewById(R.id.review_button);
         reservation_button = (Button) findViewById(R.id.reservation_button);
-         storename=(TextView)findViewById(R.id.storename);
+        text_name=(TextView)findViewById(R.id.text_name);
+        text_des=(TextView)findViewById(R.id.text_des);
+        text_call=(TextView)findViewById(R.id.text_call);
+        text_add=(TextView)findViewById(R.id.text_add);
         String name = getIntent().getStringExtra("name");
-        storename.setText(name);
+        String des=getIntent().getStringExtra("des");
+        String call=getIntent().getStringExtra("call");
+        String add=getIntent().getStringExtra("add");
+        text_name.setText(name);
+        text_des.setText(des);
+        text_call.setText(call);
+        text_add.setText(add);
         review_button.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -59,12 +71,7 @@ public class StoreInfoActivity extends AppCompatActivity {
 
     }
 
-    public void settext (String result) {
 
-            storename.setText(result);
-
-//
-    }
 }
 //    public boolean onCreateOptionsMenu(Menu menu) { //액션바에 플러스 누르면 메뉴 추가 액티비티
 //        MenuInflater inflater = getMenuInflater();

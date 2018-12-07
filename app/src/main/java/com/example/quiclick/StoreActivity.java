@@ -36,8 +36,15 @@ public class StoreActivity extends AppCompatActivity {
                 Adapter adapter = adapterView.getAdapter();
                 JSONObject postDataParam = new JSONObject();
                 String name=((Store) adapter.getItem(i)).name;
+                String des=((Store) adapter.getItem(i)).des;
+                String call=((Store) adapter.getItem(i)).call;
+                String add=((Store) adapter.getItem(i)).add;
+
                 Intent intent=new Intent(StoreActivity.this,StoreInfoActivity.class);
                 intent.putExtra("name",name);
+                intent.putExtra("des",des);
+                intent.putExtra("call",call);
+                intent.putExtra("add",add);
                 //intent.putExtra("des",des);
                 startActivity(intent);
 

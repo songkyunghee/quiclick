@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorpink1"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.example.quiclick.StoreInfoActivity"
+    android:weightSum="1"
     >
 
     <LinearLayout
@@ -15,13 +17,19 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/storename"
+            android:id="@+id/text_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorpink6"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingBottom="7dp"
+            android:paddingTop="7dp"
             android:textAlignment="center"
-            android:typeface= "serif"
-            android:textSize="30dp" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30dp"
+            android:typeface="serif"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="0dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,47 +49,41 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/address"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/text_add"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:padding="4dp"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    >
 
                     <TextView
-                        android:id="@+id/call"
+                        android:id="@+id/text_call"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="20dp" />
+                        android:textSize="15dp" />
 
                     <Button
 
                         android:id="@+id/buttonDialActivity"
-                        android:layout_width="40dp"
+                        android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
-                        android:layout_below="@+id/buttonSecondActivity"
                         android:background="@android:drawable/sym_action_call"
-                        android:text=""
                         app:srcCompat="@android:drawable/ic_menu_call" />
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/hour"
+                    android:id="@+id/text_des"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:padding="4dp"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
                 //전화 폰이미지
 
 
@@ -95,7 +97,7 @@
                     android:id="@+id/review_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     android:background="@color/colorpink6"
                     android:text="Review" />
@@ -105,7 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     android:background="@color/colorpink6"
                     android:text="Reservation" />
