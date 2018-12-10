@@ -11,9 +11,6 @@ import android.widget.EditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-import static com.example.quiclick.PostRequest.success;
-
 public class LoginActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";
     final static String defaultUrl = "http://13.209.244.98:3000";
@@ -51,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONEXception");
                 }
-                new LoginRequest(LoginActivity.this).execute(postDataParam);
+                new LoginData(LoginActivity.this).execute(postDataParam);
 
 
 

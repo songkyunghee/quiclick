@@ -14,7 +14,7 @@ import java.net.URL;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class ReviewData extends PostRequest{
+public class ReviewData extends PostRequest2{
     public ReviewData(Activity activity) {
         super(activity);
     }
@@ -22,25 +22,16 @@ public class ReviewData extends PostRequest{
     protected void onPreExecute() {
 
         try {
-            url = new URL( "http://13.209.244.98:3000/users/");
+            url = new URL( "http://13.209.244.98:3000/reviews/addreview");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
     }
+    @Override
     protected void onPostExecute(String result) {
-        try {
-            JSONObject resultJSON = new JSONObject(result.toString());
-
-            String successVaule=resultJSON.get("success").toString();
-            if(successVaule.equals("true")) {
-                Toast.makeText(activity, "회원가입 되었습니다",Toast.LENGTH_SHORT ).show();
-                Intent intent=new Intent(activity,LoginActivity.class);
-                activity.startActivity(intent);
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        Toast.makeText(activity, result,
+                Toast.LENGTH_LONG).show();
     }
+
 
 }

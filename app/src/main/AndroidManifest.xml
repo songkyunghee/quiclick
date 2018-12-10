@@ -29,6 +29,7 @@
         <activity android:name=".ReviewActivity" />
         <activity android:name=".StoreInfoActivity" />
         <activity android:name=".ReservationActivity" />
+
     </application>
 
 </manifest>

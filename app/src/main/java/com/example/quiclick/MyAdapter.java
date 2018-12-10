@@ -54,7 +54,7 @@ public class MyAdapter extends BaseAdapter {
         item_text1.setPaintFlags(item_text1.getPaintFlags() | Paint.FAKE_BOLD_TEXT_FLAG);
 
         item_text1.setText(storeList.get(pos).getName());
-        item_text2.setText(storeList.get(pos).getDes());
+        item_text2.setText(storeList.get(pos).getDes1());
 
         return convertView;
     }

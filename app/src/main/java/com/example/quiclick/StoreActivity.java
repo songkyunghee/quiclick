@@ -18,6 +18,7 @@ import org.json.JSONObject;
 
 public class StoreActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";
+    static String name;
    StoreInfoActivity storeInfoActivity;
 
     @Override
@@ -35,18 +36,24 @@ public class StoreActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Adapter adapter = adapterView.getAdapter();
                 JSONObject postDataParam = new JSONObject();
-                String name=((Store) adapter.getItem(i)).name;
-                String des=((Store) adapter.getItem(i)).des;
+                 name=((Store) adapter.getItem(i)).name;
+                String des1=((Store) adapter.getItem(i)).des1;
                 String call=((Store) adapter.getItem(i)).call;
                 String add=((Store) adapter.getItem(i)).add;
 
                 Intent intent=new Intent(StoreActivity.this,StoreInfoActivity.class);
+                Intent intent2=new Intent(StoreActivity.this,ReviewActivity.class);
+               // Intent intent3=new Intent(StoreActivity.this,ReviewGetData.class);
                 intent.putExtra("name",name);
-                intent.putExtra("des",des);
+                intent.putExtra("des1",des1);
                 intent.putExtra("call",call);
                 intent.putExtra("add",add);
-                //intent.putExtra("des",des);
+                intent2.putExtra("name",name);//가게 이름을 리뷰 액티비티로 보냄
+                //intent3.putExtra("name",name);
                 startActivity(intent);
+                startActivity(intent2);
+               // startActivity(intent3);
+
 
 //                try {
 //                   // postDataParam.put("id", ((Store) adapter.getItem(i)).id);

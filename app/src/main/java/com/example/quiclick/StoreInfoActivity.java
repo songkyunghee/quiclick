@@ -33,11 +33,11 @@ public class StoreInfoActivity extends AppCompatActivity {
         text_call=(TextView)findViewById(R.id.text_call);
         text_add=(TextView)findViewById(R.id.text_add);
         String name = getIntent().getStringExtra("name");
-        String des=getIntent().getStringExtra("des");
+        String des1=getIntent().getStringExtra("des1");
         String call=getIntent().getStringExtra("call");
         String add=getIntent().getStringExtra("add");
         text_name.setText(name);
-        text_des.setText(des);
+        text_des.setText(des1);
         text_call.setText(call);
         text_add.setText(add);
         review_button.setOnClickListener(new View.OnClickListener(){

@@ -1,5 +1,4 @@
 package com.example.quiclick;
-
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -21,16 +20,11 @@ import java.util.Iterator;
 
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- * Created by 송경희 on 2018-11-15.
- */
-
-public class PostRequest extends AsyncTask<JSONObject, Void, String> {
+public class PostRequest2 extends AsyncTask<JSONObject, Void, String> {
     static String success=null;
     Activity activity;
     URL url;
-
-    public PostRequest(Activity activity) {
+    public PostRequest2(Activity activity) {
         this.activity = activity;
     }
     @Override
@@ -67,12 +61,8 @@ public class PostRequest extends AsyncTask<JSONObject, Void, String> {
                     sb.append(line);
                     break;
                 }
-                JSONObject k=null;
-                k=new JSONObject(sb.toString());
-                success=k.get("success").toString();
                 in.close();
                 return sb.toString();
-
 
             } else {
                 return new String("Server Error : " + responseCode);
@@ -113,5 +103,3 @@ public class PostRequest extends AsyncTask<JSONObject, Void, String> {
         return result.toString();
     }
 }
-
-

@@ -17,9 +17,9 @@ import java.net.URL;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class LoginRequest extends PostRequest{
+public class LoginData extends PostRequest{
 
-    public LoginRequest(Activity activity) {
+    public LoginData(Activity activity) {
         super(activity);
     }
     @Override

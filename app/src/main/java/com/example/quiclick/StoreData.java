@@ -49,7 +49,7 @@ public class StoreData extends GetRequest{
 
 
 
-            ArrayList<Store> arrayList = getArrayListFromJSONString(jsonString);
+           ArrayList<Store> arrayList = getArrayListFromJSONString(jsonString);
         myAdapter= new MyAdapter(activity,R.layout.item,output);
 //                ArrayAdapter adapter = new ArrayAdapter(activity,
 //                        android.R.layout.simple_list_item_1,
@@ -74,9 +74,12 @@ public class StoreData extends GetRequest{
                 Store store = new Store(
 
                         jsonObject.getString("name"),
-                        jsonObject.getString("des"),
+                        jsonObject.getString("des1"),
+                        jsonObject.getString("des2"),
+                        jsonObject.getString("des3"),
                         jsonObject.getString("call"),
-                        jsonObject.getString("add")
+                        jsonObject.getString("add"),
+                        jsonObject.getString("pic")
 
                         );
 
