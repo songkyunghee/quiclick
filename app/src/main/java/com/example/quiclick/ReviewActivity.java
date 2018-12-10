@@ -20,17 +20,20 @@ public class ReviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
+        name = getIntent().getStringExtra("name");
         new ReviewGetData(ReviewActivity.this).execute();
         edit_review= (EditText)findViewById(R.id.edit_review);
         add_review=(Button)findViewById(R.id.add_review_button);
-         name = getIntent().getStringExtra("name");
+
         add_review.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 JSONObject postDataParam = new JSONObject();
+
                 try {
                     postDataParam.put("name",name);
                     postDataParam.put("des", edit_review.getText().toString());
+
 
                 } catch (JSONException e) {
                     Log.e(TAG, "JSONEXception");

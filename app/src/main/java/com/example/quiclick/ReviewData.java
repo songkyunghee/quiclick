@@ -29,7 +29,7 @@ public class ReviewData extends PostRequest2{
     }
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(activity, result,
+        Toast.makeText(activity, "리뷰가 추가되었습니다",
                 Toast.LENGTH_LONG).show();
     }
 

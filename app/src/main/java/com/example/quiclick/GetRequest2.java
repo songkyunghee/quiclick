@@ -29,7 +29,7 @@ abstract public class GetRequest2 extends AsyncTask<JSONObject, Void, String> {
 
     @Override
     protected String doInBackground(JSONObject... strings) {
-        StringBuffer output = new StringBuffer();
+       StringBuffer output = new StringBuffer();
 
         try {
             if (url == null) {
