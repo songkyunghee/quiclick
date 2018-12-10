@@ -42,16 +42,16 @@ public class StoreActivity extends AppCompatActivity {
                 String add=((Store) adapter.getItem(i)).add;
 
                 Intent intent=new Intent(StoreActivity.this,StoreInfoActivity.class);
-                Intent intent2=new Intent(StoreActivity.this,ReviewActivity.class);
+                //Intent intent2=new Intent(StoreActivity.this,ReviewActivity.class);
                // Intent intent3=new Intent(StoreActivity.this,ReviewGetData.class);
                 intent.putExtra("name",name);
                 intent.putExtra("des1",des1);
                 intent.putExtra("call",call);
                 intent.putExtra("add",add);
-                intent2.putExtra("name",name);//가게 이름을 리뷰 액티비티로 보냄
+
                 //intent3.putExtra("name",name);
                 startActivity(intent);
-                startActivity(intent2);
+
                // startActivity(intent3);
 
 

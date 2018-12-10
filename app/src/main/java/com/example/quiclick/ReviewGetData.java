@@ -18,9 +18,9 @@ import java.util.ArrayList;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class ReviewGetData extends GetRequest{
+public class ReviewGetData extends GetRequest2{
  // StoreActivity store=new StoreActivity();
-    public  ArrayList<Review> output;
+
     public ReviewGetData(Activity activity) {
 
         super(activity);
@@ -51,7 +51,7 @@ public class ReviewGetData extends GetRequest{
 
     protected ArrayList<Review> getArrayListFromJSONString(String jsonString) {
 
-         output = new ArrayList<Review>();
+        ArrayList<Review> output = new ArrayList();
         try {
 
             JSONObject object= new JSONObject(jsonString);
@@ -60,8 +60,7 @@ public class ReviewGetData extends GetRequest{
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                String successVaule=jsonObject.get("name").toString();
-               // if( successVaule.equals(store.name2)) {
+
                     Review review = new Review(
                             jsonObject.getString("name"),
                             jsonObject.getString("des")
@@ -69,7 +68,7 @@ public class ReviewGetData extends GetRequest{
 
 
                     output.add(review);
-              //  }
+
             }
         } catch (JSONException e) {
             Log.e(TAG, "Exception in processing JSONString.", e);

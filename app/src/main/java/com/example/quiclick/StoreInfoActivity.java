@@ -20,6 +20,7 @@ public class StoreInfoActivity extends AppCompatActivity {
     TextView text_des;
     TextView text_call;
     TextView text_add;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class StoreInfoActivity extends AppCompatActivity {
         text_des=(TextView)findViewById(R.id.text_des);
         text_call=(TextView)findViewById(R.id.text_call);
         text_add=(TextView)findViewById(R.id.text_add);
-        String name = getIntent().getStringExtra("name");
+        name = getIntent().getStringExtra("name");
         String des1=getIntent().getStringExtra("des1");
         String call=getIntent().getStringExtra("call");
         String add=getIntent().getStringExtra("add");
@@ -45,6 +46,7 @@ public class StoreInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(StoreInfoActivity.this,ReviewActivity.class);
+                intent.putExtra("name",name);//가게 이름을 리뷰 액티비티로 보냄
                 startActivity(intent);
             }
         });
