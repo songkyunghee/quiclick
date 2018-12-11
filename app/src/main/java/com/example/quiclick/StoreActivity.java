@@ -40,6 +40,7 @@ public class StoreActivity extends AppCompatActivity {
                 String des1=((Store) adapter.getItem(i)).des1;
                 String call=((Store) adapter.getItem(i)).call;
                 String add=((Store) adapter.getItem(i)).add;
+                String pic=((Store)adapter.getItem(i)).pic;
 
                 Intent intent=new Intent(StoreActivity.this,StoreInfoActivity.class);
                 //Intent intent2=new Intent(StoreActivity.this,ReviewActivity.class);
@@ -48,6 +49,7 @@ public class StoreActivity extends AppCompatActivity {
                 intent.putExtra("des1",des1);
                 intent.putExtra("call",call);
                 intent.putExtra("add",add);
+                intent.putExtra("pic",pic);
 
                 //intent3.putExtra("name",name);
                 startActivity(intent);
