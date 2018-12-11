@@ -1,7 +1,6 @@
 package com.example.quiclick;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -18,8 +17,8 @@ import java.util.ArrayList;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class ReviewGetData extends GetRequest2{
- // StoreActivity store=new StoreActivity();
+public class ReviewGetData extends GetRequest2 {
+
 
     public ReviewGetData(Activity activity) {
 
@@ -41,6 +40,8 @@ public class ReviewGetData extends GetRequest2{
             return;
         ArrayList<Review> arrayList = getArrayListFromJSONString(jsonString);
 
+
+
         ArrayAdapter adapter = new ArrayAdapter(activity,
                 android.R.layout.simple_list_item_1,
                 arrayList.toArray());
@@ -59,16 +60,19 @@ public class ReviewGetData extends GetRequest2{
 
             for (int i = 0; i < jsonArray.length(); i++) {
 
+                // String name =activity.getIntent().getStringExtra("name");
+                String name = ((ReviewActivity)activity).name;
+
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+      if(jsonObject.getString("name").equals(name)) {
+           Review review = new Review(
+                   jsonObject.getString("name"),
+                   jsonObject.getString("des")
+           );
 
-                    Review review = new Review(
-                            jsonObject.getString("name"),
-                            jsonObject.getString("des")
-                    );
 
-
-                    output.add(review);
-
+           output.add(review);
+      }
             }
         } catch (JSONException e) {
             Log.e(TAG, "Exception in processing JSONString.", e);
@@ -76,6 +80,7 @@ public class ReviewGetData extends GetRequest2{
         }
         return output;
     }
+
 
 
 

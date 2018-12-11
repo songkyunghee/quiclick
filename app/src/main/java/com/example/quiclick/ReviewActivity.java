@@ -1,14 +1,29 @@
 package com.example.quiclick;
 
+import android.app.Activity;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class ReviewActivity extends AppCompatActivity {
     final static String TAG = "AndroidNodeJS";
@@ -16,12 +31,17 @@ public class ReviewActivity extends AppCompatActivity {
     EditText edit_review;
     Button add_review;
     String name;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
         name = getIntent().getStringExtra("name");
-        new ReviewGetData(ReviewActivity.this).execute();
+
+        new ReviewGetData(ReviewActivity.this).execute(); //리뷰 목록 불러오는 쓰레드 실행
+
+
         edit_review= (EditText)findViewById(R.id.edit_review);
         add_review=(Button)findViewById(R.id.add_review_button);
 
@@ -40,8 +60,10 @@ public class ReviewActivity extends AppCompatActivity {
                 }
                new ReviewData(ReviewActivity.this).execute(postDataParam);
                 new ReviewGetData(ReviewActivity.this).execute();
+
             }
         });
 
 }
+
 }
