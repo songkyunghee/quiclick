@@ -38,6 +38,8 @@ public class StoreActivity extends AppCompatActivity {
                 JSONObject postDataParam = new JSONObject();
                  name=((Store) adapter.getItem(i)).name;
                 String des1=((Store) adapter.getItem(i)).des1;
+                String des2=((Store) adapter.getItem(i)).des2;
+                String des3=((Store) adapter.getItem(i)).des3;
                 String call=((Store) adapter.getItem(i)).call;
                 String add=((Store) adapter.getItem(i)).add;
                 String pic=((Store)adapter.getItem(i)).pic;
@@ -47,6 +49,8 @@ public class StoreActivity extends AppCompatActivity {
                // Intent intent3=new Intent(StoreActivity.this,ReviewGetData.class);
                 intent.putExtra("name",name);
                 intent.putExtra("des1",des1);
+                intent.putExtra("des2",des2);
+                intent.putExtra("des3",des3);
                 intent.putExtra("call",call);
                 intent.putExtra("add",add);
                 intent.putExtra("pic",pic);

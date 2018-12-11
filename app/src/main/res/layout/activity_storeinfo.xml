@@ -79,7 +79,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/text_des"
+                    android:id="@+id/text_des1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="4dp"
@@ -97,8 +97,8 @@
                     android:id="@+id/review_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
                     android:background="@color/colorpink6"
                     android:text="Review" />
 
@@ -107,8 +107,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
                     android:background="@color/colorpink6"
                     android:text="Reservation" />
             </LinearLayout>
@@ -117,12 +117,26 @@
 
     </LinearLayout>
 
-
-    <ListView
-        android:id="@+id/listview2"
+    <TextView
+        android:id="@+id/menu1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:choiceMode="singleChoice" />
+        android:layout_height="80dp"
+        android:padding="8dp"
+       />
+
+    <TextView
+        android:id="@+id/menu3"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="8dp"
+        />
+
+    <TextView
+        android:id="@+id/menu2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="8dp" />
+
 
 </LinearLayout>
 
