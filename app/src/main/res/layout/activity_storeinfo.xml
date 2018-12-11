@@ -20,7 +20,7 @@
             android:id="@+id/text_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorpink6"
+            android:background="@color/colorpink5"
             android:gravity="center_vertical|center_horizontal"
             android:paddingBottom="7dp"
             android:paddingTop="7dp"
@@ -38,10 +38,11 @@
 
             <ImageView
                 android:id="@+id/storeimg"
-                android:layout_width="150dp"
+                android:layout_width="130dp"
                 android:layout_height="match_parent"
-                android:padding="4dp"
-                android:scaleType="centerInside" />
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                 />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -53,7 +54,6 @@
                     android:id="@+id/text_add"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="4dp"
                     android:textSize="15dp" />
 
                 <LinearLayout
@@ -65,7 +65,6 @@
                         android:id="@+id/text_call"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="4dp"
                         android:textSize="15dp" />
 
                     <Button
@@ -82,7 +81,6 @@
                     android:id="@+id/text_des1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="4dp"
                     android:textSize="15dp" />
                 //전화 폰이미지
 
@@ -97,7 +95,6 @@
                     android:id="@+id/review_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:background="@color/colorpink6"
                     android:text="Review" />
@@ -107,7 +104,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="20dp"
                     android:background="@color/colorpink6"
                     android:text="Reservation" />
@@ -116,12 +112,25 @@
 
 
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="메뉴"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:background="@color/colorpink4"
+        android:textColor="#fff"
+        android:typeface= "serif"
+        android:textSize="25dp"
+         />
 
     <TextView
         android:id="@+id/menu1"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:padding="8dp"
+        android:textSize="20dp"
        />
 
     <TextView
@@ -129,13 +138,15 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:padding="8dp"
+        android:textSize="20dp"
         />
 
     <TextView
         android:id="@+id/menu2"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:padding="8dp" />
+        android:padding="8dp"
+        android:textSize="20dp"/>
 
 
 </LinearLayout>

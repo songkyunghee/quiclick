@@ -15,7 +15,7 @@
             android:id="@+id/logo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorpink6"
+            android:background="@color/colorpink5"
             android:paddingBottom="6dp"
             android:paddingTop="6dp"
             android:text="맛집 목록"
