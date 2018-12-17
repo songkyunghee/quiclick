@@ -26,7 +26,7 @@ public class LoginData extends PostRequest{
     protected void onPreExecute() {
 
         try {
-            url = new URL( "http://13.209.244.98:3000/users/authenticate");
+            url = new URL( "http://13.209.244.98:3000/newus/authenticate");
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

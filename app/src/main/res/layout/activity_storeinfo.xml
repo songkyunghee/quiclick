@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/colorwhite"
     tools:context="com.example.quiclick.StoreInfoActivity"
-    android:layout_weight="1"
+
     >
 
     <LinearLayout
@@ -40,7 +40,7 @@
             <ImageView
                 android:id="@+id/storeimg"
                 android:layout_width="130dp"
-                android:layout_height="match_parent"
+                android:layout_height="130dp"
                 android:scaleType="fitCenter"
                  />
 
@@ -54,7 +54,7 @@
                 <TextView
                     android:layout_marginTop="15dp"
                     android:id="@+id/text_add"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:textSize="15dp" />
 
@@ -62,13 +62,13 @@
 
                     <TextView
                         android:id="@+id/text_call"
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:textSize="15dp" />
 
                 <TextView
                     android:id="@+id/text_des1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:textSize="15dp" />
                 //전화 폰이미지
