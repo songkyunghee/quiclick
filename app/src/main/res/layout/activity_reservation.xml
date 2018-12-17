@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/text_wait"
-        android:layout_width="77dp"
-        android:layout_height="77dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="10dp"
         android:gravity="center_vertical|center_horizontal"
         android:paddingBottom="7dp"
@@ -33,12 +33,12 @@
 
     <TextView
         android:id="@+id/text_waitnum"
-        android:layout_width="77dp"
-        android:layout_height="33dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="148dp"
         android:layout_marginRight="20dp"
         android:textSize="20dp"
-        android:background="@color/colorgray"
+        android:background="@color/colorgray2"
         android:gravity="center_horizontal" />
 
     <Button

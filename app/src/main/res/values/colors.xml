@@ -4,12 +4,14 @@
     <color name="colorPrimaryDark">#5965b1</color>
     <color name="colorAccent">#ff4081</color>
     <color name="colorpink1">#f5d3d8</color>
-    <color name="colorpink2">#f5c4d1</color>
+    <color name="colorwhite">#fcfafb</color>
     <color name="colorpink3">#fbafc0</color>
     <color name="colorpink4">	#f39fb1</color>
     <color name="colorpink5">#ea8b9f</color>
     <color name="colorpink6">#fe7f9c</color>
     <color name="colorpink7">#d95195</color>
-    <color name="colorgray">#c5b8bf</color>
+    <color name="colorgray">#4b4783</color>
+    <color name="colorgray2">#e2dcdd</color>
+    <color name="coloryellow">#fef9ee71</color>
 
 </resources>

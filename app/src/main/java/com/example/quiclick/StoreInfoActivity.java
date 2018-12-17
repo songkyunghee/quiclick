@@ -3,32 +3,21 @@ package com.example.quiclick;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 
-import static java.security.AccessController.getContext;
-
 public class StoreInfoActivity extends AppCompatActivity {
-    Button btn;
+
     Button review_button;
     Button reservation_button;
     TextView text_name;
@@ -38,7 +27,7 @@ public class StoreInfoActivity extends AppCompatActivity {
     TextView menu1;
     TextView menu2;
     TextView menu3;
-
+    //TextView menu_1;
     ImageView store_image;
     String name;
     String pic;
@@ -51,10 +40,11 @@ public class StoreInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_storeinfo);
 
-        btn = (Button)findViewById(R.id.buttonDialActivity);
+
         review_button = (Button) findViewById(R.id.review_button);
         reservation_button = (Button) findViewById(R.id.reservation_button);
         text_name=(TextView)findViewById(R.id.text_name);
+       // menu_1=(TextView)findViewById(R.id.menu_1);
         text_des=(TextView)findViewById(R.id.text_des1);
         text_call=(TextView)findViewById(R.id.text_call);
         text_add=(TextView)findViewById(R.id.text_add);
@@ -69,7 +59,7 @@ public class StoreInfoActivity extends AppCompatActivity {
         String des2=getIntent().getStringExtra("des2");
         String des3=getIntent().getStringExtra("des3");
        // new StoreInfoData(StoreInfoActivity.this).execute();
-         pic=getIntent().getStringExtra("pic");
+        pic=getIntent().getStringExtra("pic");
       //  count=getIntent().getIntExtra("count",1);
     Thread mThread = new Thread() {
         public void run() {

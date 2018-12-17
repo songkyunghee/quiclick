@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorpink1"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:background="@color/colorwhite"
     tools:context="com.example.quiclick.StoreInfoActivity"
-    android:weightSum="1"
+    android:layout_weight="1"
     >
 
     <LinearLayout
         android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+       >
 
         <TextView
             android:id="@+id/text_name"
@@ -27,27 +28,28 @@
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30dp"
-            android:typeface="serif"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="0dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <ImageView
                 android:id="@+id/storeimg"
                 android:layout_width="130dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="fitXY"
+                android:scaleType="fitCenter"
                  />
 
             <LinearLayout
+                android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_weight="1">
 
                 <TextView
                     android:layout_marginTop="15dp"
@@ -56,26 +58,13 @@
                     android:layout_height="wrap_content"
                     android:textSize="15dp" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    >
+
 
                     <TextView
                         android:id="@+id/text_call"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15dp" />
-
-                    <Button
-
-                        android:id="@+id/buttonDialActivity"
-                        android:layout_width="35dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:background="@android:drawable/sym_action_call"
-                        app:srcCompat="@android:drawable/ic_menu_call" />
-                </LinearLayout>
 
                 <TextView
                     android:id="@+id/text_des1"
@@ -89,14 +78,17 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_weight="1">
 
                 <Button
                     android:id="@+id/review_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:background="@color/colorpink6"
+                    android:layout_marginRight="30dp"
+                    android:background="@color/colorpink5"
+                    android:textColor="@color/colorwhite"
                     android:text="Review" />
 
                 <Button
@@ -105,7 +97,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
                     android:layout_marginTop="20dp"
-                    android:background="@color/colorpink6"
+                    android:layout_marginRight="30dp"
+                    android:background="@color/colorpink5"
+                    android:textColor="@color/colorwhite"
                     android:text="Reservation" />
             </LinearLayout>
         </LinearLayout>
@@ -118,9 +112,8 @@
         android:gravity="center_vertical|center_horizontal"
         android:text="메뉴"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:background="@color/colorpink4"
-        android:textColor="#fff"
-        android:typeface= "serif"
+        android:background="@color/colorpink5"
+        android:textColor="@color/colorwhite"
         android:textSize="25dp"
          />
 
