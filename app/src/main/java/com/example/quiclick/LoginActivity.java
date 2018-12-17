@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     final static String defaultUrl = "http://13.209.244.98:3000";
     Button sign_up_button;
     Button sign_in_button;
-
+    String username;
 
 
 
@@ -34,11 +34,14 @@ public class LoginActivity extends AppCompatActivity {
                 EditText password_form = (EditText) findViewById(R.id.password_form);
                 //String success= null;
                 JSONObject postDataParam = new JSONObject();
+                username=ID_form.getText().toString();
 
+               // startActivity(intent);
                 try {
                     postDataParam.put("username", ID_form.getText().toString());
                     postDataParam.put("password", password_form.getText().toString());
-
+//                    Intent intent=new Intent(LoginActivity.this,ReservationActivity.class);
+//                    intent.putExtra("username",username);
                    // Toast.makeText(getApplicationContext(), "Login Success!",Toast.LENGTH_SHORT ).show();
                     //success = postDataParam.getString("success");
 //                    if(success=="true") {

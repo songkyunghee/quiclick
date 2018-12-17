@@ -43,6 +43,7 @@ public class StoreInfoActivity extends AppCompatActivity {
     String name;
     String pic;
     String call;
+   // int count;
     Bitmap bitmap;
     URL url;
     @Override
@@ -69,6 +70,7 @@ public class StoreInfoActivity extends AppCompatActivity {
         String des3=getIntent().getStringExtra("des3");
        // new StoreInfoData(StoreInfoActivity.this).execute();
          pic=getIntent().getStringExtra("pic");
+      //  count=getIntent().getIntExtra("count",1);
     Thread mThread = new Thread() {
         public void run() {
             try{
@@ -117,6 +119,8 @@ public class StoreInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(StoreInfoActivity.this,ReservationActivity.class);
+                intent.putExtra("name",name);
+           //     intent.putExtra("count",count);
                 startActivity(intent);
             }
         });

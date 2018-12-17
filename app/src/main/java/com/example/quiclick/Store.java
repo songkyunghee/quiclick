@@ -13,9 +13,10 @@ public class Store {
     String call;
     String add;
     String pic;
+    int count;
 
 
-    public Store( String name, String des1,String des2,String des3, String call, String add,String pic) {
+    public Store( String name, String des1,String des2,String des3, String call, String add,String pic,int count) {
 
         this.name = name;
         this.des1 = des1;
@@ -24,6 +25,7 @@ public class Store {
         this.call=call;
         this.add=add;
         this.pic=pic;
+        this.count=count;
 
     }
 
@@ -45,5 +47,7 @@ public class Store {
     public void setAdd(String add) {this.add=add;}
     public String getPic() {return pic;}
     public void setPic(String pic) {this.pic=pic;}
+    public int getCount() {return count;}
+    public void setCount(int count) {this.count=count;}
 }
 

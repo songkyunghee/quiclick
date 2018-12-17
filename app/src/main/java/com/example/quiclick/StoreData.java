@@ -79,7 +79,8 @@ public class StoreData extends GetRequest{
                         jsonObject.getString("des3"),
                         jsonObject.getString("call"),
                         jsonObject.getString("add"),
-                        jsonObject.getString("pic")
+                        jsonObject.getString("pic"),
+                        jsonObject.getInt("count")
 
                         );
 
