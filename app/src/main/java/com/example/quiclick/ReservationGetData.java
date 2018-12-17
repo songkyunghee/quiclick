@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class ReservationGetData extends GetRequest3 {
+public class ReservationGetData extends GetRequest3 { //reservation count 가져오는 클래스
 
 int reservation_num;
     public ReservationGetData(Activity activity) {

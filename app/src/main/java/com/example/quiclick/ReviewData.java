@@ -14,7 +14,7 @@ import java.net.URL;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class ReviewData extends PostRequest2{
+public class ReviewData extends PostRequest2{ // review insert class
     public ReviewData(Activity activity) {
         super(activity);
     }

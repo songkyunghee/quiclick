@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class ReviewActivity extends AppCompatActivity {
+public class ReviewActivity extends AppCompatActivity { //review 액티비티
     final static String TAG = "AndroidNodeJS";
     final static String defaultUrl = "http://13.209.244.98:3000";
     EditText edit_review;

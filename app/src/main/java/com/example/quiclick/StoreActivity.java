@@ -22,7 +22,7 @@ public class StoreActivity extends AppCompatActivity {
    StoreInfoActivity storeInfoActivity;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //store list 출력 액티비티
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 

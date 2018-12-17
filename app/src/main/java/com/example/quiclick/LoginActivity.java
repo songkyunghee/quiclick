@@ -11,7 +11,7 @@ import android.widget.EditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity { //로그인 액티비티
     final static String TAG = "AndroidNodeJS";
     final static String defaultUrl = "http://13.209.244.98:3000";
     Button sign_up_button;

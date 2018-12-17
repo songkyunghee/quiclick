@@ -15,7 +15,7 @@ import java.net.URL;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class InsertData extends PostRequest{
+public class InsertData extends PostRequest{ //회원가입 클래스
     public InsertData(Activity activity) {
         super(activity);
     }

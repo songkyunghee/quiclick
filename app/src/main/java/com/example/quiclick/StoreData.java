@@ -43,7 +43,7 @@ public class StoreData extends GetRequest{
         }
     }
     @Override
-    protected void onPostExecute(String jsonString) {
+    protected void onPostExecute(String jsonString) { //store list
         if (jsonString == null)
             return;
 

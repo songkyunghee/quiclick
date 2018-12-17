@@ -16,7 +16,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class StoreInfoActivity extends AppCompatActivity {
+public class StoreInfoActivity extends AppCompatActivity { //store 상세정보 액티비티
 
     Button review_button;
     Button reservation_button;

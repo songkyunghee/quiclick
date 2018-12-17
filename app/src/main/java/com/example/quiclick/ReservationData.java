@@ -10,7 +10,7 @@ import java.net.URL;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class ReservationData extends PostRequest3{
+public class ReservationData extends PostRequest3{ //reservation count 클래스
     public ReservationData(Activity activity) {
         super(activity);
     }

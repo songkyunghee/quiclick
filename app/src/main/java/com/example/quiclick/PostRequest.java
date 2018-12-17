@@ -25,7 +25,7 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class PostRequest extends AsyncTask<JSONObject, Void, String> {
+public class PostRequest extends AsyncTask<JSONObject, Void, String> { //회원가입
     static String success=null;
     Activity activity;
     URL url;

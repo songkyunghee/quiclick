@@ -20,7 +20,7 @@ import java.util.Iterator;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class PostRequest2 extends AsyncTask<JSONObject, Void, String> {
+public class PostRequest2 extends AsyncTask<JSONObject, Void, String> { //review insert
     static String success=null;
     Activity activity;
     URL url;

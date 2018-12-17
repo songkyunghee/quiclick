@@ -13,7 +13,7 @@ import android.widget.EditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class JoinActivity extends AppCompatActivity {
+public class JoinActivity extends AppCompatActivity { //회원가입 액티비티
     final static String TAG = "AndroidNodeJS";
     final static String defaultUrl = "http://13.209.244.98:3000";
  Button cancel_button;

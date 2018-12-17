@@ -12,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
-public class ReservationActivity extends AppCompatActivity {
+public class ReservationActivity extends AppCompatActivity { //예약 액티비티
     final static String TAG = "AndroidNodeJS";
     final static String defaultUrl = "http://13.209.244.98:3000";
    TextView text_massage;

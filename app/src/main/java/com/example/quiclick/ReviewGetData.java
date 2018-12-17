@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class ReviewGetData extends GetRequest2 {
+public class ReviewGetData extends GetRequest2 { //review 출력 클래스
 
 
     public ReviewGetData(Activity activity) {

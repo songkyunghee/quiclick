@@ -18,7 +18,7 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by 송경희 on 2018-11-15.
  */
 
-abstract public class GetRequest3 extends AsyncTask<JSONObject, Void, String> {
+abstract public class GetRequest3 extends AsyncTask<JSONObject, Void, String> { //reservation number
     final static String TAG = "AndroidNodeJS";
     Activity activity;
     URL url;

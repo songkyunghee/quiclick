@@ -17,7 +17,7 @@ import java.net.URL;
  * Created by 송경희 on 2018-11-15.
  */
 
-public class LoginData extends PostRequest{
+public class LoginData extends PostRequest{ // 로그인 클래스
 
     public LoginData(Activity activity) {
         super(activity);
