@@ -3,6 +3,8 @@
 
 ## 1. 사전준비
 - https://kwanulee.github.io/Android/intro-android/install_dev_env.html 로 들어가 안드로이드 개발 환경설치 가이드를 따른다.
+
+-에뮬레이터에서 이미지 파일 크기 때문에 앱이 중지될시 안드로이드 폰 기기를 연결하여 사용한다. 아래에 설치가이드이다.
 + [휴대기기 연결하는 방법](https://blog.naver.com/sera3579/220972227410)
 
 
